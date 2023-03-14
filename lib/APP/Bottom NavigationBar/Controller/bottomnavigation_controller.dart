@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 class BottomNavigationController extends ChangeNotifier {
   List<dynamic> screens = [
     const HomePage(),
+    const MenuPage(),
     const CartPage(),
     const AccountPage(),
-    const MenuPage(),
   ];
 
   int currentIndex = 0;

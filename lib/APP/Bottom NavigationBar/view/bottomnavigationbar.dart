@@ -10,6 +10,30 @@ class BottomNavigationBarScreen extends StatelessWidget {
     final controller = context.watch<BottomNavigationController>();
     int currentScreenIndex = controller.currentIndexSearch();
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        title: const Text(
+          "Bshoot",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 25,
+          ),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: const [
+                Text("Delivery Slot"),
+                Text("MAR 2ND,16.00-22.00"),
+              ],
+            ),
+          )
+        ],
+      ),
       body: controller.screens[currentScreenIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,

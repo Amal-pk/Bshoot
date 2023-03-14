@@ -1,20 +1,24 @@
+import 'package:bshoot/APP/Bottom%20NavigationBar/Controller/bottomnavigation_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class BottomNavigationBarScreen extends StatelessWidget {
   const BottomNavigationBarScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = context.watch<BottomNavigationController>();
+    int currentScreenIndex = controller.currentIndexSearch();
     return Scaffold(
-      body: screens[currentScreenIndex],
+      body: controller.screens[currentScreenIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.white,
         selectedItemColor: Colors.black,
         type: BottomNavigationBarType.fixed,
         // showSelectedLabels: false,
         elevation: 0,
         currentIndex: currentScreenIndex,
-        onTap: (value) => screenindexprovider.currentIndexResult(value),
+        onTap: (value) => controller.currentIndexResult(value),
         items: [
           BottomNavigationBarItem(
             icon: Icon(
@@ -27,17 +31,25 @@ class BottomNavigationBarScreen extends StatelessWidget {
           BottomNavigationBarItem(
             icon: Icon(
               (currentScreenIndex == 1)
-                  ? Icons.stadium_sharp
-                  : Icons.stadium_outlined,
+                  ? Icons.window_sharp
+                  : Icons.window_outlined,
             ),
-            label: 'All Turff',
+            label: 'Menu',
           ),
           BottomNavigationBarItem(
-            icon: Icon((currentScreenIndex == 2)
+            icon: Icon(
+              (currentScreenIndex == 2)
+                  ? Icons.shopping_cart
+                  : Icons.shopping_cart_outlined,
+            ),
+            label: 'Cart',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon((currentScreenIndex == 3)
                 ? Icons.person
                 : Icons.person_outline),
-            label: 'Profile',
-          )
+            label: 'Account',
+          ),
         ],
       ),
     );

@@ -43,6 +43,7 @@ class BottomNavigationBarScreen extends StatelessWidget {
         elevation: 0,
         currentIndex: currentScreenIndex,
         onTap: (value) => controller.currentIndexResult(value),
+        
         items: [
           BottomNavigationBarItem(
             icon: Icon(

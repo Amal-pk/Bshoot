@@ -1,5 +1,6 @@
 import 'package:bshoot/APP/Bottom%20NavigationBar/Controller/bottomnavigation_controller.dart';
 import 'package:bshoot/APP/Bottom%20NavigationBar/view/bottomnavigationbar.dart';
+import 'package:bshoot/APP/Cart/Controller/cart_controller.dart';
 import 'package:bshoot/APP/HomePage/Controller/homepage_controller.dart';
 import 'package:bshoot/APP/Menu/Controller/menu_controller.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,8 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => MenuControllerPage(),
+        ),ChangeNotifierProvider(
+          create: (context) => CartController(),
         ),
       ],
       child: MaterialApp(
